@@ -25,7 +25,11 @@ const Footer = () => {
             item
             xs={4}
             md={6}
-            sx={{ display: 'flex', flexDirection: 'column' }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
           >
             <Typography
               variant='p'

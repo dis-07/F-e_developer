@@ -1,9 +1,8 @@
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Unstable_Grid2';
-
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-import Logo from '../assets/image/logo.png';
+import { Link as LinkSkroll } from 'react-scroll';
+import { Box, Grid } from '@mui/material';
+import logo from '../assets/image/logo.png';
 
 const Header = () => {
   return (
@@ -21,88 +20,90 @@ const Header = () => {
           spacing={2}
         >
           <Grid
+            item
+            xs={12}
+            md={4}
             sx={{
               display: 'flex',
               alignItems: 'center',
             }}
-            xs={6}
-            md={4}
           >
-            <Link>
+            <Link to='/'>
               <img
-                src={Logo}
-                alt='logo'
+                src={logo}
+                alt='Logo'
                 width='200'
                 height='100'
               />
             </Link>
           </Grid>
           <Grid
+            item
+            xs={12}
+            md={2}
             sx={{
               display: 'flex',
               justifyContent: 'flex-end',
               alignItems: 'center',
               pb: '35px',
             }}
-            xs={6}
-            md={2}
-          >
-            <Link
-              to='/'
-              className='link'
-            >
-              Home
-            </Link>
-          </Grid>
+          ></Grid>
           <Grid
+            item
+            xs={12}
+            md={2}
             sx={{
               display: 'flex',
               justifyContent: 'flex-end',
               alignItems: 'center',
               pb: '35px',
             }}
-            xs={6}
-            md={2}
           >
             <Link
               to='/about'
               className='link'
             >
-              About me
+              Про нас
             </Link>
           </Grid>
           <Grid
+            item
+            xs={12}
+            md={2}
             sx={{
               display: 'flex',
               justifyContent: 'flex-end',
               alignItems: 'center',
               pb: '35px',
             }}
-            xs={6}
-            md={2}
           >
-            <Link
-              to='/portfolio'
+            <LinkSkroll
+              to='skroll'
+              duration={500}
+              offset={-50}
+              spy={true}
+              smooth={true}
               className='link'
             >
-              Portfolio
-            </Link>
+              Наші роботи
+            </LinkSkroll>
           </Grid>
           <Grid
+            item
+            xs={6}
+            md={2}
             sx={{
               display: 'flex',
               justifyContent: 'flex-end',
               alignItems: 'center',
               pb: '35px',
             }}
-            xs={6}
-            md={2}
           >
             <Link
-              to='contacts'
+              to='/contacts'
               className='link'
             >
-              Contacts
+              Контакти
             </Link>
           </Grid>
         </Grid>

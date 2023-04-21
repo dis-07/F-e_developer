@@ -14,7 +14,7 @@ const StartHome = () => {
 
   useEffect(() => {
     axios
-      .get('/homes')
+      .get('/')
       .then((data) => {
         setData(data);
       })
@@ -41,9 +41,11 @@ const StartHome = () => {
               xs={6}
               md={6}
             >
-              <Typography variant='body2'>
+              <Typography
+                variant='body2'
+                key={id}
+              >
                 <img
-                  key={id}
                   src={image}
                   alt='title'
                   width='357'
@@ -55,9 +57,9 @@ const StartHome = () => {
               xs={6}
               md={6}
               sx={{ display: 'flex', flexDirection: 'column' }}
+              key={id}
             >
               <Typography
-                key={id}
                 variant='h1'
                 sx={{
                   margin: '0',
@@ -70,7 +72,6 @@ const StartHome = () => {
                 {title}
               </Typography>
               <Typography
-                key={id}
                 variant='p'
                 sx={{ display: 'block', mt: '34px', color: '#727272' }}
               >
