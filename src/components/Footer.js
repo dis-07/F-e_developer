@@ -23,7 +23,7 @@ const Footer = () => {
         >
           <Grid
             item
-            xs={4}
+            xs={12}
             md={6}
             sx={{
               display: 'flex',
@@ -31,17 +31,22 @@ const Footer = () => {
               justifyContent: 'center',
             }}
           >
-            <Typography
-              variant='p'
-              sx={{ mb: '10px' }}
+            <Link
+              className='footer-mail'
+              to='mailto:support@spectralux.com.ua'
             >
-              Vladyslav Yefremenko
+              support@spectralux.com.ua
+            </Link>
+            <Typography
+              sx={{ mt: '10px', display: 'inline-flex' }}
+              variantMapping={{ p: 'p' }}
+            >
+              (с) 2023
             </Typography>
-            <Typography variant='p'>(с) 2023</Typography>
           </Grid>
           <Grid
             item
-            xs={4}
+            xs={12}
             md={6}
             sx={{
               display: 'flex',

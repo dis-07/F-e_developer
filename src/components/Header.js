@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Link as LinkSkroll } from 'react-scroll';
 import { Box, Grid } from '@mui/material';
-import logo from '../assets/image/logo.png';
+import { ReactComponent as Logo } from '../assets/image/logo.svg';
 
 const Header = () => {
   return (
@@ -18,65 +18,45 @@ const Header = () => {
         <Grid
           container
           spacing={2}
+          sx={{ display: 'flex' }}
         >
           <Grid
             item
             xs={12}
-            md={4}
+            md={6}
             sx={{
               display: 'flex',
               alignItems: 'center',
             }}
           >
-            <Link to='/'>
-              <img
-                src={logo}
-                alt='Logo'
-                width='200'
+            <NavLink
+              to='/'
+              className='logo'
+            >
+              <Logo
+                width='100'
                 height='100'
               />
-            </Link>
+              SpectraLux
+            </NavLink>
           </Grid>
           <Grid
+            spacing={2}
             item
             xs={12}
-            md={2}
+            md={6}
             sx={{
               display: 'flex',
               justifyContent: 'flex-end',
               alignItems: 'center',
-              pb: '35px',
-            }}
-          ></Grid>
-          <Grid
-            item
-            xs={12}
-            md={2}
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-              pb: '35px',
             }}
           >
-            <Link
+            <NavLink
               to='/about'
               className='link'
             >
               Про нас
-            </Link>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={2}
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-              pb: '35px',
-            }}
-          >
+            </NavLink>
             <LinkSkroll
               to='skroll'
               duration={500}
@@ -87,24 +67,12 @@ const Header = () => {
             >
               Наші роботи
             </LinkSkroll>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            md={2}
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-              pb: '35px',
-            }}
-          >
-            <Link
+            <NavLink
               to='/contacts'
               className='link'
             >
               Контакти
-            </Link>
+            </NavLink>
           </Grid>
         </Grid>
       </Box>

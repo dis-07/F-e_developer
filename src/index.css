@@ -9,7 +9,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+
+  font-size: 48px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #242222;
+}
+
 .link {
+  padding: 10px;
   display: block;
   text-decoration: none;
   text-transform: uppercase;
@@ -30,7 +41,15 @@ body {
   border-radius: 5px;
 }
 
+.footer-mail {
+  display: contents;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #242222;
+}
+
 .footer-link {
+  display: block;
   text-decoration: none;
   margin-left: 20px;
 }

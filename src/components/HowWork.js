@@ -56,7 +56,7 @@ const HowWork = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     mt: '50px',
-                    mb: '100px',
+                    mb: '50px',
                     fontSize: '48px',
                     lineHeight: '56px',
                     textAlign: 'center',
@@ -66,13 +66,12 @@ const HowWork = () => {
                   {title}
                 </Typography>
                 <Typography
-                  variant='p'
+                  variantMapping={{ p: 'p' }}
                   sx={{
-                    display: 'block',
-                    width: '500px',
+                    display: 'flex',
+                    maxWidth: '50%',
                     fontSize: '18px',
-                    mt: '50px',
-                    mb: '57px',
+                    margin: '0 auto',
                     textAlign: 'center',
                     color: '#727272',
                   }}

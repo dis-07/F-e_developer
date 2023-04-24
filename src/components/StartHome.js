@@ -38,7 +38,7 @@ const StartHome = () => {
         {data.map(({ id, image, title, description }) => (
           <>
             <Grid
-              xs={6}
+              xs={12}
               md={6}
             >
               <Typography
@@ -54,7 +54,7 @@ const StartHome = () => {
               </Typography>
             </Grid>
             <Grid
-              xs={6}
+              xs={12}
               md={6}
               sx={{ display: 'flex', flexDirection: 'column' }}
               key={id}
