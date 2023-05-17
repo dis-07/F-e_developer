@@ -41,6 +41,7 @@ const HowWork = () => {
         >
           <Box sx={{ maxWidth: '1110px', margin: '0 auto' }}>
             <Grid
+              xs={12}
               container
               spacing={2}
               sx={{
@@ -49,7 +50,7 @@ const HowWork = () => {
               }}
               key={id}
             >
-              <Grid>
+              <Grid xs={12}>
                 <Typography
                   variant='h2'
                   sx={{
@@ -79,13 +80,13 @@ const HowWork = () => {
                   {description}
                 </Typography>
               </Grid>
-              <img
+              {/* <img
                 src={image}
                 alt='image code'
                 width='1110'
                 height='600'
                 className='img'
-              />
+              /> */}
             </Grid>
           </Box>
         </Box>

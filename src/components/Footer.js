@@ -4,8 +4,9 @@ import { Typography } from '@mui/material';
 
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as GitHub } from '../assets/image/github-logo.svg';
+import { ReactComponent as Mail } from '../assets/image/mail-logo.svg';
 import { ReactComponent as LinkedIn } from '../assets/image/linkedin-logo.svg';
+import { ReactComponent as Instagram } from '../assets/image/instagram.svg';
 
 const Footer = () => {
   return (
@@ -14,6 +15,7 @@ const Footer = () => {
         pt: '30px',
         pb: '20px',
         backgroundColor: '#9ab6ca',
+        mt: 'auto',
       }}
     >
       <Box sx={{ maxWidth: '1110px', margin: '0 auto' }}>
@@ -35,10 +37,14 @@ const Footer = () => {
               className='footer-mail'
               to='mailto:support@spectralux.com.ua'
             >
+              <Mail
+                width='50'
+                height='40'
+              />
               support@spectralux.com.ua
             </Link>
             <Typography
-              sx={{ mt: '10px', display: 'inline-flex' }}
+              sx={{ mt: '10px', ml: '10px', display: 'inline-flex' }}
               variantMapping={{ p: 'p' }}
             >
               (с) 2023
@@ -56,22 +62,21 @@ const Footer = () => {
           >
             <Link
               className='footer-link'
-              to='https://www.linkedin.com/in/vladyslav-yefremenko-a9093a1b8/'
-              target='_blank'
+              to='https://www.instagram.com/specta.lux'
             >
-              <LinkedIn
+              <Instagram
                 width='70'
                 height='70'
               />
             </Link>
             <Link
               className='footer-link'
-              to='https://github.com/dis-07'
+              to='https://www.linkedin.com/in/vladyslav-yefremenko-a9093a1b8/'
               target='_blank'
             >
-              <GitHub
-                width='50'
-                height='50'
+              <LinkedIn
+                width='70'
+                height='70'
               />
             </Link>
           </Grid>

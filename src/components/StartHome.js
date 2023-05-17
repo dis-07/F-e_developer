@@ -48,8 +48,8 @@ const StartHome = () => {
                 <img
                   src={image}
                   alt='title'
-                  width='357'
-                  heigth='233'
+                  width='375'
+                  heigth='240'
                 />
               </Typography>
             </Grid>

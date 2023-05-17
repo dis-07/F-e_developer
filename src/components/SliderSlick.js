@@ -13,9 +13,12 @@ import axios from '../helpers/axios';
 
 const settings = {
   dots: true,
-  infinite: false,
+  infinite: true,
+  autoplay: true,
   speed: 500,
-  slidesToShow: 2,
+  autoplaySpeed: 2000,
+  cssEase: 'linear',
+  slidesToShow: 3,
   slidesToScroll: 1,
   swipeToSlide: true,
   afterChange: function (index) {
@@ -27,18 +30,19 @@ const settings = {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        initialSlide: 6,
+        infinite: true,
         dots: true,
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        initialSlide: 3,
       },
     },
     {
@@ -46,6 +50,7 @@ const settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        initialSlide: 3,
       },
     },
   ],
@@ -97,17 +102,20 @@ const SliderSlick = () => {
         <Box sx={{ mt: '50px', mb: '50px' }}>
           <Slider {...settings}>
             {data.map(({ id, title, image, urladress }) => (
-              <Box sx={{ mb: '30px' }}>
+              <Box
+                sx={{ display: 'flex', justifyContent: 'center', mb: '30px' }}
+              >
                 <Link
                   key={id}
                   to={urladress}
+                  className='slider-link'
                 >
                   <img
                     className='img'
                     src={image}
                     alt={title}
-                    width='540'
-                    height='350'
+                    width='350'
+                    height='300'
                   />
                 </Link>
               </Box>

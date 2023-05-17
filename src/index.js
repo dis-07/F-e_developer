@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import Root from './pages/Root';
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
+import Contacts from './pages/Contacts';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/contacts',
+        element: <Contacts />,
       },
     ],
   },

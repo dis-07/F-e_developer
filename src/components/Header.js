@@ -1,10 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Link as LinkSkroll } from 'react-scroll';
 import { Box, Grid } from '@mui/material';
 import { ReactComponent as Logo } from '../assets/image/logo.svg';
 
 const Header = () => {
+  const location = useLocation();
+
+  const isContactsPage = location.pathname === '/contacts';
+
   return (
     <Box
       sx={{
@@ -18,7 +22,6 @@ const Header = () => {
         <Grid
           container
           spacing={2}
-          sx={{ display: 'flex' }}
         >
           <Grid
             item
@@ -37,7 +40,7 @@ const Header = () => {
                 width='100'
                 height='100'
               />
-              SpectraLux
+              SpectaLux
             </NavLink>
           </Grid>
           <Grid
@@ -57,16 +60,18 @@ const Header = () => {
             >
               Про нас
             </NavLink>
-            <LinkSkroll
-              to='skroll'
-              duration={500}
-              offset={-50}
-              spy={true}
-              smooth={true}
-              className='link'
-            >
-              Наші роботи
-            </LinkSkroll>
+            {!isContactsPage && (
+              <LinkSkroll
+                to='skroll'
+                duration={500}
+                offset={-50}
+                spy={true}
+                smooth={true}
+                className='link'
+              >
+                Наші роботи
+              </LinkSkroll>
+            )}
             <NavLink
               to='/contacts'
               className='link'
