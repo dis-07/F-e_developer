@@ -41,6 +41,12 @@ body {
   border-radius: 5px;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .slider-link {
   display: block;
 }

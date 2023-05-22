@@ -41,34 +41,24 @@ const Contacts = () => {
             }}
           >
             <Link
-              to='mailto:support@spectralux.com.ua'
+              to='mailto:support@spectalux.tech'
               className='contact-lik'
             >
               <Mail
                 width='100'
                 height='70'
               />
-              support@spectralux.com.ua
+              support@spectalux.tech
             </Link>
             <Link
-              to='mailto:vladyslav@spectralux.com.ua'
+              to='mailto:admin@spectalux.tech'
               className='contact-lik'
             >
               <Mail
                 width='100'
                 height='70'
               />
-              vladyslav@spectralux.com.ua
-            </Link>
-            <Link
-              to='mailto:vitaly@spectralux.com.ua'
-              className='contact-lik'
-            >
-              <Mail
-                width='100'
-                height='70'
-              />
-              vitaly@spectralux.com.ua
+              admin@spectalux.tech
             </Link>
             <Link
               to='tel:380969569323'

@@ -2,15 +2,19 @@ import { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Typography } from '@mui/material';
-import { Button } from '@mui/material';
+import { Button, Modal, Typography } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import axios from '../helpers/axios';
+import MailForm from './MailForm';
 
 const StartHome = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     axios
@@ -28,6 +32,20 @@ const StartHome = () => {
       </Box>
     );
   }
+  const style = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '400px',
+    bgcolor: 'background.paper',
+    border: '1px solid #000000',
+    boxShadow: 24,
+    p: 4,
+  };
   return (
     <Box sx={{ maxWidth: '1110px', margin: '0 auto', padding: '0' }}>
       <Grid
@@ -78,6 +96,8 @@ const StartHome = () => {
                 {description}
               </Typography>
               <Button
+                onClick={handleOpen}
+                type='button'
                 variant='contained'
                 sx={{
                   mt: '30px',
@@ -90,6 +110,16 @@ const StartHome = () => {
               >
                 Написать мне
               </Button>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby='modal-modal-title'
+                aria-describedby='modal-modal-description'
+              >
+                <Box sx={style}>
+                  <MailForm handleCloseForm={handleClose} />
+                </Box>
+              </Modal>
             </Grid>
           </>
         ))}
