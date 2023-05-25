@@ -12,7 +12,7 @@ const MailForm = ({ handleCloseForm }) => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post('/contact', data);
+      await axios.post('/feedback', data);
       // Обработка успешной отправки формы
       console.log('Форма успешно отправлена');
       handleCloseForm();
