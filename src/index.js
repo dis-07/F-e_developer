@@ -24,6 +24,9 @@ const router = createBrowserRouter([
         path: '/contacts',
         element: <Contacts />,
       },
+      {
+        path: '/feedback',
+      },
     ],
   },
 ]);

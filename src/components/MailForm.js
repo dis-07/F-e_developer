@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
-import axios from 'axios';
+import axios from '../helpers/axios';
 
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
