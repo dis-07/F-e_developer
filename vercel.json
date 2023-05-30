@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://f-e-developer.herokuapp.com/api/:path*"
+    }
+  ]
+}
