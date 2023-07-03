@@ -12,9 +12,9 @@ const MailForm = ({ handleCloseForm }) => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post('/contact-uses', { data: data });
+      await axios.post('/contact-forms', data);
       // Обработка успешной отправки формы
-      console.log('Форма успешно отправлена');
+      alert('Форма успешно отправлена');
       handleCloseForm();
     } catch (error) {
       console.error(error);
@@ -31,7 +31,7 @@ const MailForm = ({ handleCloseForm }) => {
     >
       <Controller
         control={control}
-        name='name'
+        name='userName'
         defaultValue=''
         render={({ field, fieldState: { error } }) => {
           return (
@@ -39,7 +39,7 @@ const MailForm = ({ handleCloseForm }) => {
               {...field}
               id='outlined-basic'
               label='Ваше імʼя'
-              {...register('name', { required: 'Required' })}
+              {...register('userName', { required: 'Required' })}
               variant='outlined'
               type='text'
               helperText={error?.message}
