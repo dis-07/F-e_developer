@@ -29,6 +29,9 @@ body {
 
 .link:hover {
   color: rgb(56, 56, 141);
+  border: 1px solid #242222;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .a {

@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <>
       <StartHome />
-      <HowWork />
       <SliderSlick />
+      <HowWork />
     </>
   );
 };

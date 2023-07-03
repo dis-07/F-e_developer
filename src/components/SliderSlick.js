@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import Box from '@mui/material/Box';
-import { Link } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Typography } from '@mui/material';
 
@@ -57,9 +56,9 @@ const SliderSlick = () => {
 
   useEffect(() => {
     axios
-      .get('/stoks')
+      .get('/sliders')
       .then((data) => {
-        setData(data);
+        data.map(({ imageUrl }) => setData(imageUrl));
       })
       .finally(setLoading(false));
   }, []);
@@ -92,27 +91,21 @@ const SliderSlick = () => {
             color: '#000000',
           }}
         >
-          Наші Проєкти
+          Наші можливості
         </Typography>
         <Box sx={{ mt: '50px', mb: '50px' }}>
           <Slider {...settings}>
-            {data.map(({ id, title, image, urladress }) => (
+            {data.map(({ id, url, name }) => (
               <Box
                 sx={{ display: 'flex', justifyContent: 'center', mb: '30px' }}
               >
-                <Link
-                  key={id}
-                  to={urladress}
-                  className='slider-link'
-                >
-                  <img
-                    className='img'
-                    src={image}
-                    alt={title}
-                    width='350'
-                    height='300'
-                  />
-                </Link>
+                <img
+                  className='img'
+                  src={`https://spectalux-back-end-b7762c2f3b71.herokuapp.com${url}`}
+                  alt={name}
+                  width='350'
+                  height='300'
+                />
               </Box>
             ))}
           </Slider>

@@ -1,7 +1,25 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { Link as LinkSkroll } from 'react-scroll';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Button } from '@mui/material';
+import { styled } from '@mui/system';
+
 import { ReactComponent as Logo } from '../assets/image/logo.svg';
+
+const CustomButton = styled(Button)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  padding: 10px;
+
+  font-size: 16px;
+  color: #000000;
+  &:hover {
+    border: 1px solid #000000;
+    background: rgb(56, 56, 141);
+    color: #ffffff;
+  }
+`;
 
 const Header = () => {
   const location = useLocation();
@@ -53,30 +71,48 @@ const Header = () => {
               alignItems: 'center',
             }}
           >
-            <NavLink
-              to='/about'
-              className='link'
+            <Grid
+              item
+              xs={8}
+              md={4}
+              sx={{ display: 'flex', justifyContent: 'center' }}
             >
-              Про нас
-            </NavLink>
-            {!isContactsPage && (
-              <LinkSkroll
-                to='skroll'
-                duration={500}
-                offset={-50}
-                spy={true}
-                smooth={true}
+              {!isContactsPage && (
+                <LinkSkroll
+                  to='skroll'
+                  duration={500}
+                  offset={-50}
+                  spy={true}
+                  smooth={true}
+                  className='link'
+                >
+                  Галерея
+                </LinkSkroll>
+              )}
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              md={4}
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
+              <NavLink
+                to='/contacts'
                 className='link'
               >
-                Наші роботи
-              </LinkSkroll>
-            )}
-            <NavLink
-              to='/contacts'
-              className='link'
+                Контакти
+              </NavLink>
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              md={4}
+              sx={{ display: 'flex', justifyContent: 'center' }}
             >
-              Контакти
-            </NavLink>
+              <CustomButton href='https://spectalux-back-end-b7762c2f3b71.herokuapp.com/admin'>
+                Login
+              </CustomButton>
+            </Grid>
           </Grid>
         </Grid>
       </Box>

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
+const API_URL = 'https://spectalux-back-end-b7762c2f3b71.herokuapp.com';
 const instance = axios.create({
-  // baseURL: 'http://localhost:3000/api',
-  baseURL: 'https://f-e-developer.herokuapp.com/api',
+  baseURL: API_URL,
 });
 
 instance.interceptors.response.use((response) => response.data);

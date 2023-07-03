@@ -32,6 +32,7 @@ const Contacts = () => {
           sx={{ maxWidth: '1110px', m: '0 auto' }}
         >
           <Grid
+            item
             md={6}
             sx={{
               display: 'flex',
@@ -82,6 +83,7 @@ const Contacts = () => {
             </Link>
           </Grid>
           <Grid
+            item
             md={6}
             sx={{
               display: 'flex',
